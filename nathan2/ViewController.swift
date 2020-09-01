@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,WKUIDelegate {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var webview: WKWebView!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+}
+
+    @IBAction func buttonclick(_ sender: Any)
+    {
+        if let url = URL(string: "https://google.com") {
+            UIApplication.shared.open(url, options: [:])
+        }
+        
+        
     }
-
-
+    
 }
 
